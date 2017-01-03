@@ -1,0 +1,31 @@
+<!-- Create an HTML page with some filler content including some paragraphs, headings, and links. DONE
+
+When a paragraph is moused over, turn the text of that paragraph pink. DONE
+
+Add an exclamation point to the end of each heading. DONE
+
+When a link is clicked, confirm that the user wants to navigate to that url. If the user clicks OK, allow the default behavior of the link to be executed. If the user clicks cancel, cancel the default browser behavior by calling event.preventDefault() on the event object. DONE
+
+When a link is clicked and the user chooses not to go to the url, remove the link from the DOM. DONE
+ -->
+<!DOCTYPE html>
+<html ng-app = "myapp2">
+
+<head>
+    <title>Intro to Angular P2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src='./main2.js'></script>
+    <link rel = "stylesheet" type = "text/css" href = "main2.css"/>
+</head>
+
+<body ng-controller = "myController as myCtl">
+    <h1> {{myCtl.heading}} </h1>
+    <p id = "top_para" ng-mouseover = "myCtl.toPink()" ng-mouseout ="myCtl.backToNorm()"> This is a sample paragraph </p>
+    <a onclick="clickLink()" href="https://www.google.com" id = "link"> This is a link </a>
+
+    <p id = "bottom_para" ng-mouseover = "myCtl.toPink2()" ng-mouseout ="myCtl.backToNorm2()" > This is a sample paragraph </p>
+    <h1> {{myCtl.heading}} </h1>
+
+</body>
+
+</html>

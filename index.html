@@ -1,0 +1,44 @@
+<!-- Part I
+Create an HTML page with a button.   DONE
+
+Add an ng-click directive so that when you click the button a message is printed to the console. DONE
+
+Change the behavior of the click handler to reveal an h1 with some text in the body element.
+
+Add another button with a click handler that reveals an unordered list with three list items in the body element.
+ -->
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+  <title> Intro to Angular </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src='./main.js'></script>
+</head>
+
+<body ng-controller = "myController as myCtrl">
+  <div>
+    <button ng-click = "myCtrl.logMessage()">Button</button>
+<!-- ng-repeat='object in mapCtl.countryObjects' ng-click='mapCtl.logMotto($index,object)' -->
+    <button ng-click = "myCtrl.revealDiv()">Click here </button>
+
+    <div ng-show = "myCtrl.clicked">
+    <h1> i'm visible </h1>
+  </div>
+
+<!-- unordered list -->
+
+  <button ng-click = "myCtrl.revealList()">Click here </button>
+
+  <div ng-show = "myCtrl.clicked2">
+  <ul>
+    <li>Apples</li>
+    <li>Oranges</li>
+    <li>Watermelon</li>
+  </ul>
+</div>
+
+  </div>
+</body>
+
+</html>

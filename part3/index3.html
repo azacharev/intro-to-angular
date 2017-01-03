@@ -1,0 +1,32 @@
+<!--
+Create an HTML page with one giant button in the center. DONE
+
+When the giant button is clicked, a 'popup' is revealed. The popup is simply a div containing some HTML content, which has a class applied making it appear with position: fixed in the middle of the page.
+
+Add a close button to the popup. When clicked, the popup should be hidden.
+
+Make sure the giant button still works to create a popup even after one is opened and closed. -->
+<!DOCTYPE html>
+<html ng-app="myapp3">
+
+<head>
+    <title>Intro To Angular Part 3</title>
+    <link rel="stylesheet" type="text/css" href="main3.css"> </link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+</head>
+
+<body ng-controller="myController as myCtl">
+    <div class="centerButton">
+        <button id="giantButton" ng-click="myCtl.reveal()"> GIANT BUTTON </button>
+    </div>
+
+    <div id="popup" ng-show="myCtl.clicked">
+        <h1> This is a popup </h1>
+        <button id ="closebutton" ng-show='myCtl.clicked' ng-click="myCtl.hide()"> close </button>
+    </div>
+
+    <script src="main3.js"></script>
+</body>
+
+
+</html>
